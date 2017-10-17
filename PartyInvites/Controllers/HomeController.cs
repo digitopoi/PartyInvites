@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 
 namespace PartyInvites.Controllers
 {
@@ -7,6 +8,8 @@ namespace PartyInvites.Controllers
         // GET: Home
         public ViewResult Index()
         {
+            int hour = DateTime.Now.Hour;
+            ViewBag.Greeting = hour < 12 ? "Good Morning" : "Good Afternoon";
             return View();
         }
     }
